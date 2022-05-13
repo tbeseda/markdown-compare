@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@markdoc/markdoc": "^0.1.2",
+    "arcdown": "^0.3.1",
+    "benchmark": "^2.1.4",
+    "commonmark": "^0.30.0",
+    "markdown-it": "^13.0.1",
+    "marked": "^4.0.15",
+    "showdown": "^2.1.0",
+    "snarkdown": "^2.0.0"
+  }
+}

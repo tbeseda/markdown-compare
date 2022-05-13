@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>snarkdown</title>
+    <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.5.1/styles/night-owl.css">
+    <style>
+      body {
+        font-family: system-ui;
+        padding: 1rem 3rem;
+        display: grid;
+        grid-template-columns: 1fr minmax(150px, 25%);
+        gap: 2rem;
+      }
+      pre {
+        background: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>snarkdown</h1>
+      ---<h2>title: arcdown</h2><h2>heading2</h2><h3>heading3</h3><h5>heading5</h5><h6><h6>not a heading</h6></h6><blockquote>the simple example of a blockquote 
+the simple example of a blockquote
+the simple example of a blockquote
+the simple example of a blockquote</blockquote>
+... continuation
+... continuation
+... continuation
+... continuation<br />empty blockquote:<br /><blockquote></blockquote><br />>>>>>> deeply nested blockquote
+>>>>> deeply nested blockquote
+>>>> deeply nested blockquote
+>>> deeply nested blockquote
+>> deeply nested blockquote<blockquote>deeply nested blockquote</blockquote><br /><blockquote>deeply nested blockquote</blockquote>
+>> deeply nested blockquote
+>>> deeply nested blockquote
+>>>> deeply nested blockquote
+>>>>> deeply nested blockquote
+>>>>>> deeply nested blockquote<pre class="code poetry"><code>an
+example
+
+of
+
+
+
+a code
+block</code></pre>``````
+an
+example
+<pre class="code "><code>of
+
+
+a fenced</code></pre>
+code
+block
+``````<br /> <em> </em> <em> </em> <em><br /> -  -  -  -  -<br /> <strong></strong><strong></strong><br /> <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong></em> text<br /><div class="this is an html block"><br />blah blah<br /></div><br /><table>
+  <tr><pre class="code poetry"><code>&lt;td&gt;
+  **test**
+&lt;/td&gt;</code></pre>  </tr>
+</table><br /><table><br />  <tr><pre class="code poetry"><code>&lt;td&gt;
+
+  test
+
+&lt;/td&gt;</code></pre>  </tr><br /></table><br /><!<a href="undefined">CDATA<a href="undefined">
+  <a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined">... <em>cdata section - this should not be parsed</em> ...</a></a></a></a></a></a></a></a></a></a></a>
+</a></a>><h2>heading</h2><h1>heading</h1>not a heading
+----------------------------------- text
+ - tidy
+ - bullet
+ - list<br /> - loose<br /> - bullet<br /> - list<br /> 0. ordered
+ 1. list
+ 2. example<br /> -
+ -
+ -
+ -<br /> 1.
+ 2.
+ 3.<br /> -  an example
+of a list item<pre class="code poetry"><code>with a continuation
+
+    this part is inside the list
+
+   this part is just a paragraph  </code></pre> 1. test
+ -  test
+ 1. test
+ -  test<br /><ol><li>is this a valid bullet?</li></ol><br /> - <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><em><br /> - this
+ - is<pre class="code poetry"><code>a
+
+long</code></pre> - loose
+ - list<br /> - with
+ - some<pre class="code poetry"><code>tidy</code></pre> - list
+ - items
+ - in<br /> - between
+ - <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong></em><br /> - this<pre class="code poetry"><code>- is
+  - a
+    - deeply
+      - nested
+        - bullet
+          - list</code></pre> <br /> 1. this<pre class="code poetry"><code>2. is
+   3. a
+      4. deeply
+         5. nested
+            6. unordered
+               7. list</code></pre> - 1
+  - 2<pre class="code poetry"><code>- 3
+ - 4
+  - 5
+   - 6
+    - 7
+   - 6
+  - 5
+ - 4
+- 3</code></pre>  - 2
+ - 1<br /> - - - - - - - - - deeply-nested one-element item<br /><a href="https://github.com/markdown-it">1</a> <a href="undefined">2</a> <a href="undefined">3</a> <a href="https://github.com/markdown-it">1</a> <a href="undefined">2</a> <a href="undefined">3</a><br /><a href="undefined">looooooooooooooooooooooooooooooooooooooooooooooooooong label</a><br /> <a href="https://github.com/markdown-it">1</a>: <http://something.example.com/foo/bar>
+ <a href="undefined">2</a>: http://something.example.com/foo/bar 'test'
+ <a href="undefined">3</a>:
+ http://foo/bar
+ <a href="undefined">    looooooooooooooooooooooooooooooooooooooooooooooooooong   label    </a>:
+ 111
+ 'test'
+ <a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"> this should not slow down anything </a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a>: q
+ (as long as it is not referenced anywhere)<br /> <a href="undefined"><a href="bar"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="bar"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="&lt;http://something.example.com/foo/bar&gt;"><a href="http://something.example.com/foo/bar 'test'"><a href="undefined"><a href="&lt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;&gt; '\'\'\'\'\'\'\'\'\'\'\'\'\'\''"></a>: this is not a valid reference
+<a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined">foo</a></a></a></a></a></a></a><br /><a href="undefined"><em><a href="undefined"></em><a href="undefined"><em><a href="undefined"></em><a href="undefined">foo</a><em></em></a><em></em></a><em></em></a><em></em></a><br />closed (valid) autolinks:<br /> <ftp://1.2.3.4:21/path/foo>
+ <http://foo.bar.baz?q=hello&id=22&boolean>
+ <http://veeeeeeeeeeeeeeeeeeery.loooooooooooooooooooooooooooooooong.autolink/>
+ <teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest@gmail.com><br />these are not autolinks:<br /> <ftp://1.2.3.4:21/path/foo
+ <http://foo.bar.baz?q=hello&id=22&boolean
+ <http://veeeeeeeeeeeeeeeeeeery.loooooooooooooooooooooooooooooooong.autolink
+ <teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest@gmail.com
+ < http://foo.bar.baz?q=hello&id=22&boolean >
+<code>lots</code>of<code>backticks</code><br />`<code>i</code><code>wonder</code><code>how</code><code>this</code><code>will</code><code>be</code><code>parsed</code>`
+<em>this</em> <em>is</em> <em>your</em> <em>basic</em> <em>boring</em> <em>emphasis</em><br /><em>this</em> <em>is</em> <em>your</em> <em>basic</em> <em>boring</em> <em>emphasis</em><br /><strong>this</strong> <strong>is</strong> <strong>your</strong> <strong>basic</strong> <strong>boring</strong> <strong>emphasis</strong>
+<em>this </em>is <em>a </em>bunch<em> of</em> nested<em> emphases</em> <br /><strong>this </strong>is <strong>a </strong>bunch<strong> of</strong> nested<strong> emphases</strong> <br /><strong><em>this <strong><em>is <strong><em>a <strong><em>bunch<strong><em> of<strong><em> nested<strong><em> emphases<strong><em> 
+</em>this <em>is </em>a <em>worst </em>case <em>for </em>em <em>backtracking<br /><strong>this </strong>is <strong>a </strong>worst <strong>case </strong>for <strong>em </strong>backtracking<br /><strong><em>this <strong><em>is <strong><em>a <strong><em>worst <strong><em>case <strong><em>for <strong><em>em <strong><em>backtracking
+entities:<br />&nbsp; &amp; &copy; &AElig; &Dcaron; &frac34; &HilbertSpace; &DifferentialD; &ClockwiseContourIntegral;<br />&#35; &#1234; &#992; &#98765432;<br />non-entities:<br />&18900987654321234567890; &1234567890098765432123456789009876543212345678987654;<br />&qwertyuioppoiuytrewqwer; &oiuytrewqwertyuioiuytrewqwertyuioytrewqwertyuiiuytri;<br />\t\e\s\t\i\n\g \e\s\c\a\p\e \s\e\q\u\e\n\c\e\s<br />\!\\\"\#\$\%\&\'\(\)\*\+\,\.\/\:\;\<\=\>\?<br />\@ \[ \] \^ \_ \` \{ \| \} \~ \- \'<br />\
+\\
+\\\
+\\\\
+\\\\\
+
+\<this\> \<is\> \<not\> \<html\><br />Taking commonmark tests from the spec for benchmarking here:<br /><a href="undefined"><bab><c2c><br /><a/><b2/><br /><a  /><b2
+data="foo" ><br /><a foo="bar" bam = 'baz <em>"</em>'
+<em>boolean zoop:33=zoop:33 /><br /><33> <<strong>><br /><a h<em>#ref="hi"><br /><a href="hi'> <a href=hi'><br />< a><
+foo><bar/ ><br /><a href='bar'title=title><br /></a>
+</foo ><br /></a href="foo"><br />foo <!-- this is a
+comment - with hyphen --><br />foo <!-- not a comment -- two hyphens --><br />foo <?php echo $a; ?><br />foo <!ELEMENT br EMPTY><br />foo <!<a href="undefined">CDATA<a href="undefined">>&<</em></strong></em></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></a></a>><br /><a href="&ouml;"><br /><a href="\*"><br /><a href="\"">
+Valid links:<br /> <a href="\">this is a link</a>()
+ <a href="
+
+ [this is not a link](http://something.example.com/foo/bar 'test'
+ 
+ [this is not a link](((((((((((((((((((((((((((((((((((((((((((((((
+ 
+ [this is not a link](((((((((((">this is a link</a>
+ <a href="test">this is a link</a>
+ !<a href="test">this is an image</a>()
+ <img src="&lt;http://something.example.com/foo/bar&gt;" alt="this is an image">
+ <img src="http://something.example.com/foo/bar 'test'" alt="this is an image">
+ 
+ <a href="test">escape test</a>
+ <a href="test">escape test \]\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a>\</a></a>\)\)\)\)\)\)\)\)\)\)\)\)\))<br />Invalid links:<br /> <a href="test">this is not a link<br /> <a href="test">this is not a link</a>))))))))) (((((((((()))))))))))
+Valid links:<br /><a href="test"><a href="undefined"><a href="test"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"></a></a></a></a></a></a></a></a><br /><a href="undefined"> <a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="undefined"><a href="test"><a href="undefined"><a href="https://github.com/markdown-it"><a href="undefined"><a href="http://spec.commonmark.org/0.13/"><a href="http://spec.commonmark.org/dingus.html"> <a href="benchmarks.md"></a> </a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a> </a><br />Invalid links:<br /><a href="js/README.md"><a href="http://en.wikipedia.org/wiki/Cross-site_scripting"><a href="http://www.cmake.org/download/"><a href="http://re2c.org"><a href="http://www.cmake.org/download/"><a href="http://www.cmake.org/download/"><a href="js/README.md"><a href="http://spec.commonmark.org/0.13/"><a href="http://spec.commonmark.org/0.13/"><br /><a href="http://johnmacfarlane.net/pandoc/"> <a href="http://daringfireball.net/projects/markdown/syntax"> <a href="http://talk.commonmark.org"> <a href="http://github.com/jgm/CommonMark/issues"> <a href="http://github.com/jgm/pandoc"> <a href="http://github.com/jgm/peg-markdown"> <a href="http://github.com/jgm/lunamark"> <a href="http://johnmacfarlane.net/babelmark2/"> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a> <a><br /><img src="https://github.com/markdown-it/markdown-it" alt="![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![![
+
+this\
+should\
+be\
+separated\
+by\
+newlines
+
+this  
+should  
+be  
+separated  
+by  
+newlines  
+too
+
+this
+should
+not
+be
+separated
+by
+newlines
+
+Lorem ipsum dolor sit amet, __consectetur__ adipiscing elit. Cras imperdiet nec erat ac condimentum. Nulla vel rutrum ligula. Sed hendrerit interdum orci a posuere. Vivamus ut velit aliquet, mollis purus eget, iaculis nisl. Proin posuere malesuada ante. Proin auctor orci eros, ac molestie lorem dictum nec. Vestibulum sit amet erat est. Morbi luctus sed elit ac luctus. Proin blandit, enim vitae egestas posuere, neque elit ultricies dui, vel mattis nibh enim ac lorem. Maecenas molestie nisl sit amet velit dictum lobortis. Aliquam erat volutpat.
+
+Vivamus sagittis, diam in [vehicula"> lobortis, sapien arcu mattis erat, vel aliquet sem urna et risus. Ut feugiat sapien vitae mi elementum laoreet. Suspendisse potenti. Aliquam erat nisl, aliquam pretium libero aliquet, sagittis eleifend nunc. In hac habitasse platea dictumst. Integer turpis augue, tincidunt dignissim mauris id, rhoncus dapibus purus. Maecenas et enim odio. Nullam massa metus, varius quis vehicula sed, pharetra mollis erat. In quis viverra velit. Vivamus placerat, est nec hendrerit varius, enim dui hendrerit magna, ut pulvinar nibh lorem vel lacus. Mauris a orci iaculis, hendrerit eros sed, gravida leo. In dictum mauris vel augue varius, ac ullamcorper nisl ornare. In eu posuere velit, ac fermentum arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sed malesuada leo, at interdum elit.<br />Nullam ut tincidunt nunc. <a>Pellentesque</a><a>1</a> metus lacus, commodo eget justo ut, rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada, odio volutpat elementum vulputate, massa magna scelerisque ante, et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet, non sagittis justo vestibulum. Suspendisse volutpat felis lectus, nec consequat ipsum mattis id. Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu.<br />Suspendisse potenti. Donec ante velit, ornare at augue quis, tristique laoreet sem. Etiam in ipsum elit. Nullam cursus dolor sit amet nulla feugiat tristique. Phasellus ac tellus tincidunt, imperdiet purus eget, ullamcorper ipsum. Cras eu tincidunt sem. Nullam sed dapibus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id venenatis tortor. In consectetur sollicitudin pharetra. Etiam convallis nisi nunc, et aliquam turpis viverra sit amet. Maecenas faucibus sodales tortor. Suspendisse lobortis mi eu leo viverra volutpat. Pellentesque velit ante, vehicula sodales congue ut, elementum a urna. Cras tempor, ipsum eget luctus rhoncus, arcu ligula fermentum urna, vulputate pharetra enim enim non libero.<br />Proin diam quam, elementum in eleifend id, elementum et metus. Cras in justo consequat justo semper ultrices. Sed dignissim lectus a ante mollis, nec vulputate ante molestie. Proin in porta nunc. Etiam pulvinar turpis sed velit porttitor, vel adipiscing velit fringilla. Cras ac tellus vitae purus pharetra tincidunt. Sed cursus aliquet aliquet. Cras eleifend commodo malesuada. In turpis turpis, ullamcorper ut tincidunt a, ullamcorper a nunc. Etiam luctus tellus ac dapibus gravida. Ut nec lacus laoreet neque ullamcorper volutpat.<br />Nunc et leo erat. Aenean mattis ultrices lorem, eget adipiscing dolor ultricies eu. In hac habitasse platea dictumst. Vivamus cursus feugiat sapien quis aliquam. Mauris quam libero, porta vel volutpat ut, blandit a purus. Vivamus vestibulum dui vel tortor molestie, sit amet feugiat sem commodo. Nulla facilisi. Sed molestie arcu eget tellus vestibulum tristique.<br />this is a test for tab expansion, be careful not to replace them with spaces<br />1	4444
+22	333
+333	22
+4444	1<pre class="code poetry"><code>tab-indented line
+    space-indented line
+tab-indented line</code></pre>a lot of                                                spaces in between here<br />a lot of												tabs in between here<hr /><h1>CommonMark</h1>CommonMark is a rationalized version of Markdown syntax,
+with a <a>spec</a><a>the spec</a> and BSD3-licensed reference
+implementations in C and JavaScript.<br /><a>Try it now!</a><h2>The implementations</h2>The C implementation provides both a shared library (<code>libcmark</code>) and a
+standalone program <code>cmark</code> that converts CommonMark to HTML.  It is
+written in standard C99 and has no library dependencies.  The parser is
+very fast (see <a>benchmarks</a>).<br />It is easy to use <code>libcmark</code> in python, lua, ruby, and other dynamic
+languages: see the <code>wrappers/</code> subdirectory for some simple examples.<br />The JavaScript implementation provides both an NPM package and a
+single JavaScript file, with no dependencies, that can be linked into
+an HTML page. For further information, see the
+<a>README in the js directory</a>.<br /><strong>A note on security:</strong>
+Neither implementation attempts to sanitize link attributes or
+raw HTML.  If you use these libraries in applications that accept
+untrusted user input, you must run the output through an HTML
+sanitizer to protect against
+<a>XSS attacks</a>.<h2>Installing (C)</h2>Building the C program (<code>cmark</code>) and shared library (<code>libcmark</code>)
+requires <a>cmake</a>.  If you modify <code>scanners.re</code>, then you will also
+need <a>re2c</a>, which is used to generate <code>scanners.c</code> from
+<code>scanners.re</code>.  We have included a pre-generated <code>scanners.c</code> in
+the repository to reduce build dependencies.<br />If you have GNU make, you can simply <code>make</code>, <code>make test</code>, and `make
+install<code>.  This calls [cmake] to create a </code>Makefile<code> in the </code>build<code>
+directory, then uses that </code>Makefile` to create the executable and
+library.  The binaries can be found in <code>build/src</code>.<br />For a more portable method, you can use <a>cmake</a> manually. <a>cmake</a> knows
+how to create build environments for many build systems.  For example,
+on FreeBSD:<pre class="code poetry"><code>mkdir build
+cd build
+cmake ..  # optionally: -DCMAKE_INSTALL_PREFIX=path
+make      # executable will be created as build/src/cmark
+make test
+make install</code></pre>Or, to create Xcode project files on OSX:<pre class="code poetry"><code>mkdir build
+cd build
+cmake -G Xcode ..
+make
+make test
+make install</code></pre>The GNU Makefile also provides a few other targets for developers.
+To run a benchmark:<pre class="code poetry"><code>make bench</code></pre>To run a "fuzz test" against ten long randomly generated inputs:<pre class="code poetry"><code>make fuzztest</code></pre>To run a test for memory leaks using <code>valgrind</code>:<pre class="code poetry"><code>make leakcheck</code></pre>To reformat source code using <code>astyle</code>:<pre class="code poetry"><code>make astyle</code></pre>To make a release tarball and zip archive:<pre class="code poetry"><code>make archive</code></pre><h2>Compiling for Windows</h2>To compile with MSVC and NMAKE:<pre class="code poetry"><code>nmake</code></pre>You can cross-compile a Windows binary and dll on linux if you have the
+<code>mingw32</code> compiler:<pre class="code poetry"><code>make mingw</code></pre>The binaries will be in <code>build-mingw/windows/bin</code>.<h2>Installing (JavaScript)</h2>The JavaScript library can be installed through <code>npm</code>:<pre class="code poetry"><code>npm install commonmark</code></pre>This includes a command-line converter called <code>commonmark</code>.<br />If you want to use it in a client application, you can fetch
+a pre-built copy of <code>commonmark.js</code> from
+<http://spec.commonmark.org/js/commonmark.js>.<br />For further information, see the
+<a>README in the js directory</a>.<h2>The spec</h2><a>The spec</a> contains over 500 embedded examples which serve as conformance
+tests. To run the tests using an executable <code>$PROG</code>:<pre class="code poetry"><code>python3 test/spec_tests.py --program $PROG</code></pre>If you want to extract the raw test data from the spec without
+actually running the tests, you can do:<pre class="code poetry"><code>python3 test/spec_tests.py --dump-tests</code></pre>and you'll get all the tests in JSON format.<br />The source of <a>the spec</a> is <code>spec.txt</code>.  This is basically a Markdown
+file, with code examples written in a shorthand form:<pre class="code poetry"><code>.
+Markdown source
+.
+expected HTML output
+.</code></pre>To build an HTML version of the spec, do <code>make spec.html</code>.  To build a
+PDF version, do <code>make spec.pdf</code>.  (Creating a PDF requires <a>pandoc</a>
+and a LaTeX installation.  Creating the HTML version requires only
+<code>libcmark</code> and <code>python3</code>.)<br />The spec is written from the point of view of the human writer, not
+the computer reader.  It is not an algorithm---an English translation of
+a computer program---but a declarative description of what counts as a block
+quote, a code block, and each of the other structural elements that can
+make up a Markdown document.<br />Because John Gruber's <a>canonical syntax
+description</a> leaves
+many aspects of the syntax undetermined, writing a precise spec requires
+making a large number of decisions, many of them somewhat arbitrary.
+In making them, we have appealed to existing conventions and
+considerations of simplicity, readability, expressive power, and
+consistency.  We have tried to ensure that "normal" documents in the many
+incompatible existing implementations of Markdown will render, as far as
+possible, as their authors intended.  And we have tried to make the rules
+for different elements work together harmoniously.  In places where
+different decisions could have been made (for example, the rules
+governing list indentation), we have explained the rationale for
+my choices.  In a few cases, we have departed slightly from the canonical
+syntax description, in ways that we think further the goals of Markdown
+as stated in that description.<br />For the most part, we have limited ourselves to the basic elements
+described in Gruber's canonical syntax description, eschewing extensions
+like footnotes and definition lists.  It is important to get the core
+right before considering such things. However, we have included a visible
+syntax for line breaks and fenced code blocks.<h2>Differences from original Markdown</h2>There are only a few places where this spec says things that contradict
+the canonical syntax description:<br /><ul><li>It allows all punctuation symbols to be backslash-escaped,</li></ul><pre class="code poetry"><code>not just the symbols with special meanings in Markdown. We found
+that it was just too hard to remember which symbols could be
+escaped.</code></pre><ul><li>It introduces an alternative syntax for hard line</li></ul><pre class="code poetry"><code>breaks, a backslash at the end of the line, supplementing the
+two-spaces-at-the-end-of-line rule. This is motivated by persistent
+complaints about the “invisible” nature of the two-space rule.</code></pre><ul><li>Link syntax has been made a bit more predictable (in a</li></ul><pre class="code poetry"><code>backwards-compatible way). For example, `Markdown.pl` allows single
+quotes around a title in inline links, but not in reference links.
+This kind of difference is really hard for users to remember, so the
+spec allows single quotes in both contexts.</code></pre><ul><li>The rule for HTML blocks differs, though in most real cases it</li></ul><pre class="code poetry"><code>shouldn't make a difference. (See the section on HTML Blocks
+for details.) The spec's proposal makes it easy to include Markdown
+inside HTML block-level tags, if you want to, but also allows you to
+exclude this. It is also makes parsing much easier, avoiding
+expensive backtracking.</code></pre><ul><li>It does not collapse adjacent bird-track blocks into a single</li></ul><pre class="code poetry"><code>blockquote:
+
+    &gt; this is two
+
+    &gt; blockquotes
+
+    &gt; this is a single
+    &gt;
+    &gt; blockquote with two paragraphs</code></pre><ul><li>Rules for content in lists differ in a few respects, though (as with</li></ul><pre class="code poetry"><code>HTML blocks), most lists in existing documents should render as
+intended. There is some discussion of the choice points and
+differences in the subsection of List Items entitled Motivation.
+We think that the spec's proposal does better than any existing
+implementation in rendering lists the way a human writer or reader
+would intuitively understand them. (We could give numerous examples
+of perfectly natural looking lists that nearly every existing
+implementation flubs up.)</code></pre><ul><li>The spec stipulates that two blank lines break out of all list</li></ul><pre class="code poetry"><code>contexts.  This is an attempt to deal with issues that often come up
+when someone wants to have two adjacent lists, or a list followed by
+an indented code block.</code></pre><ul><li>Changing bullet characters, or changing from bullets to numbers or</li></ul><pre class="code poetry"><code>vice versa, starts a new list. We think that is almost always going
+to be the writer's intent.</code></pre><ul><li>The number that begins an ordered list item may be followed by</li></ul><pre class="code poetry"><code>either `.` or `)`. Changing the delimiter style starts a new
+list.</code></pre><ul><li>The start number of an ordered list is significant.</li></ul><br /><ul><li>Fenced code blocks are supported, delimited by either</li></ul><pre class="code poetry"><code>backticks or tildes</code></pre><h2>Contributing</h2>There is a <a>forum for discussing
+CommonMark</a>; you should use it instead of
+github issues for questions and possibly open-ended discussions.
+Use the <a>github issue tracker</a>
+only for simple, clear, actionable issues.<h2>Authors</h2>The spec was written by John MacFarlane, drawing on<br /><ul><li>his experience writing and maintaining Markdown implementations in several</li></ul>
+  languages, including the first Markdown parser not based on regular
+  expression substitutions (<a>pandoc</a>) and
+  the first markdown parsers based on PEG grammars
+  (<a>peg-markdown</a>,
+  <a>lunamark</a>)<ul><li>a detailed examination of the differences between existing Markdown</li></ul>
+  implementations using <a>BabelMark 2</a>,
+  and<ul><li>extensive discussions with David Greenspan, Jeff Atwood, Vicent</li></ul>
+  Marti, Neil Williams, and Benjamin Dumke-von der Ehe.<br />John MacFarlane was also responsible for the original versions of the
+C and JavaScript implementations.  The block parsing algorithm was
+worked out together with David Greenspan.  Vicent Marti
+optimized the C implementation for performance, increasing its speed
+tenfold.  Kārlis Gaņģis helped work out a better parsing algorithm
+for links and emphasis, eliminating several worst-case performance
+issues.  Nick Wellnhofer contributed many improvements, including
+most of the C library's API and its test harness.  Vitaly Puzrin
+has offered much good advice about the JavaScript implementation.
+    </main>
+    <nav>
+      <h3>Navigation</h3>
+      TOC placeholder
+    </nav>
+  </body>
+</html>
