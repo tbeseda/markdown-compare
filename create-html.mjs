@@ -9,6 +9,8 @@ import marked from './renderers/marked.mjs';
 import showdown from './renderers/showdown.mjs';
 import snarkdown from './renderers/snarkdown.mjs';
 
+import asciidoctor from './renderers/asciidoctor.mjs';
+
 const source = readFileSync(new URL('./test.md', import.meta.url), 'utf8');
 
 const fns = {
@@ -29,3 +31,11 @@ for (const fn in fns) {
     HTML({ title, body: html, toc: tocHtml }),
   );
 }
+
+const adocSource = readFileSync(new URL('./test.adoc', import.meta.url), 'utf8');
+const html = await asciidoctor(adocSource);
+
+writeFileSync(
+  new URL('./html/asciidoctor.html', import.meta.url),
+  HTML({ title: 'Asciidoctor', body: html }),
+);

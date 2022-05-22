@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asciidoctor</title>
+    <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.5.1/styles/night-owl.css">
+    <style>
+      body {
+        font-family: system-ui;
+        padding: 1rem 3rem;
+        display: grid;
+        grid-template-columns: 1fr minmax(150px, 25%);
+        gap: 2rem;
+      }
+      pre {
+        background: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Asciidoctor</h1>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="description" content="A brief comparison of AsciiDoc and Markdown.">
+<title>Compare AsciiDoc and Markdown</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="./asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Compare AsciiDoc and Markdown</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most compelling reason to choose a lightweight markup language for writing is to minimize the number of technical concepts an author must grasp in order to be immediately productive.
+In other words, the goal is to be able to <em>write without friction</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_starting_with_markdown">Starting with Markdown</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The defacto lightweight markup language is Markdown.
+(At least, Markdown is what you call it at first).
+The main advantage of Markdown lies in its primitive syntax: its manual and cheatsheet are one and the same.
+But this advantage is also its greatest weakness.</p>
+</div>
+<div class="paragraph">
+<p>As soon as authors need something slightly more complex than basic prose (e.g., tables, cross references, footnotes, embedded YouTube videos, etc.), they find themselves resorting to embedded HTML or seeking out more feature-rich implementations.
+Markdown has become a maze of different implementations, termed &#8220;flavors&#8221;, which make a universal definition evasive.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The IETF has declared &#8220;there is no such thing as "invalid" Markdown.&#8221;
+See <a href="https://tools.ietf.org/html/rfc7763#section-1.1" target="_blank" rel="noopener">This Is Markdown! Or: Markup and Its Discontents</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s how the story inevitably goes.
+You start out with Markdown.
+Then it&#8217;s Markdown + X.
+Then Markdown + X + Y.
+And down the rabbit hole you go.
+What&#8217;s worse, X and Y often require you to sprinkle in HTML, unnecessarily coupling content with presentation and wrecking portability.
+Your instinct to choose Markdown is good.
+There are just better options.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_graduating_to_asciidoc">Graduating to AsciiDoc</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AsciiDoc presents a more sound alternative.
+The AsciiDoc syntax is more concise than (or at least as concise as) Markdown.
+At the same time, AsciiDoc offers power and flexibility without requiring the use of HTML or &#8220;flavors&#8221; for essential syntax such as tables, description lists, admonitions (tips, notes, warnings, etc.) and table of contents.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s important to understand that AsciiDoc was initially designed as a plain-text alternative to the DocBook XML schema.
+AsciiDoc isn&#8217;t stuck in a game of whack-a-mole trying to satisfy publishing needs like Markdown.
+Rather, the AsciiDoc syntax was explicitly designed with the needs of publishing in mind, both print and web.
+If the need arises, you can make full use of the huge choice of tools available for a DocBook workflow using Asciidoctor&#8217;s DocBook converter.
+That&#8217;s why mapping to an enterprise documentation format like DocBook remains a key use case for AsciiDoc.</p>
+</div>
+<div class="paragraph">
+<p>And yet, AsciiDoc is simple enough to stand in as a better flavor of Markdown.
+But what truly makes AsciiDoc the right investment is that its syntax was designed to be extended as a core feature.
+This extensibility not only means that AsciiDoc has a lot more to offer, with room to grow, it also fulfills the objective of ensuring your content is maximally reusable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comparison_by_example">Comparison by example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following table shows the AsciiDoc syntax as it compares to Markdown.
+Since AsciiDoc supports a broader range of syntax than Markdown, this side-by-side comparison focuses mainly on areas where the syntax overlaps.</p>
+</div>
+<table id="asciidoc-vs-markdown" class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. A selection of AsciiDoc language features compared to Markdown</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Language Feature</th>
+<th class="tableblock halign-left valign-top">Markdown</th>
+<th class="tableblock halign-left valign-top">AsciiDoc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bold (constrained)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">**bold**</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>*bold*</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bold (unconstrained)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">**b**old</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>**b**old</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Italic (constrained)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">*italic*</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>_italic_</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Italic (unconstrained)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>__i__talic</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monospace (constrained)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">`monospace`</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>`monospace`</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monospace (unconstrained)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">`m`onospace</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>``m``onospace</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link with label</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">[Asciidoctor](https://asciidoctor.org)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>https://asciidoctor.org[Asciidoctor]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relative link</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">[user guide](user-guide.html)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>link:user-guide.html[user guide]
+xref:user-guide.adoc[user guide]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File link</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">[get the PDF]({% raw %}{{ site.url }}{% endraw %}/assets/mydoc.pdf)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>link:{site-url}/assets/mydoc.pdf[get the PDF]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cross reference</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">See [Usage](#_usage).
+
+&lt;h2 id="_usage"&gt;Usage&lt;/h2&gt;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>See &lt;&lt;_usage&gt;&gt;.
+
+== Usage</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block ID (aka anchor)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">&lt;h2 id="usage"&gt;Usage&lt;/h2&gt;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[#usage]
+== Usage</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inline anchor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>. [[step-1]]Download the software</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inline image w/ alt text</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">![Logo](/images/logo.png)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>image:logo.png[Logo]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block image w/ alt text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>image::logo.png[Logo]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Section heading*</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">## Heading 2</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>== Heading 2</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blockquote*</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">&gt; Quoted text.
+&gt;
+&gt; Another paragraph in quote.</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>____
+Quoted text.
+
+Another paragraph in quote.
+____</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Literal block</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">    $ gem install asciidoctor</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="title">Indented (by 1 or more spaces)</div>
+<div class="content">
+<pre class="highlight"><code> $ gem install asciidoctor</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Delimited</div>
+<div class="content">
+<pre class="highlight"><code>....
+$ gem install asciidoctor
+....</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code block*</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">```java
+public class Person {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
+}
+```</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[source,java]
+----
+public class Person {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
+}
+----</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unordered list</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">* apples
+* orange
+  * temple
+  * navel
+* bananas</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* apples
+* oranges
+** temple
+** navel
+* bananas</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordered list</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">1. first
+2. second
+3. third</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>. first
+. second
+. third</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thematic break (aka horizontal rule)*</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">***
+
+* * *
+
+---
+
+- - -
+
+___
+
+_ _ _</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>'''</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typographic quotes (aka &#8220;smart quotes&#8221;)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enabled through an extension switch, but offer little control in how they are applied.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>The `'90s popularized a new form of music known as "`grunge`" rock.
+It'll turn out to have an impact that extended well beyond music.</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Document header</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="title">Slapped on as &#8220;front matter&#8221;</div>
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">---
+layout: docs
+title: Writing posts
+prev_section: defining-frontmatter
+next_section: creating-pages
+permalink: /docs/writing-posts/
+---</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="title">Native support!</div>
+<div class="content">
+<pre class="highlight"><code>= Writing posts
+:awestruct-layout: base
+:showtitle:
+:prev_section: defining-frontmatter
+:next_section: creating-pages</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admonitions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>TIP: You can add line numbers to source listings by adding the word `numbered` in the attribute list after the language name.</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sidebars</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>.Lightweight Markup
+****
+Writing languages that let you type less and express more.
+****</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block titles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>.Grocery list
+* Milk
+* Eggs
+* Bread</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>include::intro.adoc[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI reference</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">Go to the [home page][home].
+
+[home]: https://example.org</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>:home: https://example.org
+
+Go to the {home}[home page].</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom CSS classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>n/a</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[.path]_Gemfile_</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>* Asciidoctor also supports the Markdown syntax for this language feature.</p>
+</div>
+<div class="paragraph">
+<p>You can see that AsciiDoc has the following advantages over Markdown:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AsciiDoc uses the same number of markup characters or less when compared to Markdown in nearly all cases.</p>
+</li>
+<li>
+<p>AsciiDoc uses a consistent formatting scheme (i.e., it has consistent patterns).</p>
+</li>
+<li>
+<p>AsciiDoc can handle all permutations of nested inline (and block) formatting, whereas Markdown often falls down.</p>
+</li>
+<li>
+<p>AsciiDoc handles cases that Markdown doesn&#8217;t, such as a proper approach to inner-word markup, source code blocks and block-level images.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Certain Markdown flavors, such as Markdown Extra, support additional features such as tables and description lists.
+However, since these features don&#8217;t appear in &#8220;plain&#8221; Markdown, they&#8217;re not included in the comparison table.
+But they&#8217;re supported natively by AsciiDoc.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Asciidoctor, which is used for converting AsciiDoc on GitHub and GitLab, emulates some of the common parts of the Markdown syntax, like headings, blockquotes and fenced code blocks, simplifying the migration from Markdown to AsciiDoc.
+For details, see <a href="syntax-quick-reference.html#markdown-compatibility">Markdown compatibility</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-05-22 15:29:01 -0600
+</div>
+</div>
+</body>
+</html>
+    </main>
+    <nav>
+      <h3>Navigation</h3>
+      undefined
+    </nav>
+  </body>
+</html>

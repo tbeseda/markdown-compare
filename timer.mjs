@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import arcdown from './renderers/arcdown.mjs';
+import asciidoctor from './renderers/asciidoctor.mjs';
 import commonmark from './renderers/commonmark.mjs';
 import markdoc from './renderers/markdoc.mjs';
 import markdownIt from './renderers/markdown-it.mjs';
@@ -31,3 +32,10 @@ for (const renderer in renderers) {
 
   console.timeEnd(renderer);
 }
+
+const adocSource = readFileSync(new URL('./test.adoc', import.meta.url), 'utf8');
+console.time('asciidoctor');
+for (let i = 0; i < N; i++) {
+  const result = await asciidoctor(adocSource);
+}
+console.timeEnd('asciidoctor');
